@@ -38,9 +38,9 @@ q=0 #initial runoff from the bottom of soil(inch)
 #iteration
 T=12 #rainfall duration (hours)
 delta_t=1 #time steps
+
 #Period before reaching field capacity
-data_rnof_infl=np.array([]) # dataset of accumulative runoff with infiltration 
-                            # considered
+data_rnof_infl=np.array([]) # dataset of accumulative runoff with infiltration considered
 R=R0
 for t in np.linspace(1,T,np.int(T)):
     if F>=FCD: #whether soil reaches field capacity
@@ -49,10 +49,10 @@ for t in np.linspace(1,T,np.int(T)):
     f=K*(1-deltaP+deltaP*(R+SH)/F) #Green-Ampt
     F=F+f*delta_t #cumulative infiltrated water depth
     if F>=R:
-        F=R # cumulative infiltrated water depth cannot exceed cumulative 
-            # precipitation
+        F=R # cumulative infiltrated water depth cannot exceed cumulative precipitation
     q1=0 #no runoff during this period
     data_rnof_infl=np.append(data_rnof_infl,q1)
+    
 #Period after reaching field capacity
 if F>=FCD:
     #Period after soil being saturated
