@@ -1,1 +1,2 @@
-# G_A
+# Green & Ampt Infiltration Model
+Incomplete project.
